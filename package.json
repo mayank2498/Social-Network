@@ -1,0 +1,13 @@
+{
+  "name": "TimeSuck",
+  "version": "0.0.1",
+  "dependencies": {
+    "angular": "^1.6.8",
+    "body-parser": "^1.18.2",
+    "bootstrap": "^4.0.0",
+    "express": "^4.16.2",
+    "jquery": "^3.3.0",
+    "mongoose": "^5.0.0",
+    "popper.js": "^1.12.9"
+  }
+}

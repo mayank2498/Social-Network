@@ -1,0 +1,38 @@
+<html ng-app="TimeWaste">
+<html>
+<head>
+	<title>MEAN app</title>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="app/css/main.css">
+	
+</head>
+
+
+<div class="navbar navbar-default navbar-fixed-top" ng-controller="NavigationController">
+	<div class="container">
+		<div><input type="text" ng-model="login.email"><input type="password" ng-model="login.password">
+			<button ng-click="logInUser()">Login</button> <a ui-sref="signUp">SignUp</a></div>
+	</div>
+</div>
+<body>
+<ui-view><ui-view>
+
+</body>
+
+
+
+<script src="node_modules/angular/angular.js"></script>
+
+<!-- Angular app -->
+<script type="text/javascript" src="app/app.js"></script>
+
+<!-- Navigation controller -->
+<!-- Angular app -->
+<script type="text/javascript" src="app/navigation/navigation-controller.js"></script>
+
+
+<!-- Controller for our Angular App -->
+<script src="app/signup/signup-controller.js"></script>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+</html>
