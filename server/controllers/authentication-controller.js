@@ -2,30 +2,30 @@ var mongoose = require('mongoose');
 var User = require('../datasets/users');
 
 module.exports.signup = function(req,res){ 
-  console.log("controller ...");
   var user = new User(req.body);
   user.save();
   console.log('saved in DB');
   res.json(req.body);
 }
 
-module.exports.login = function(req,res){
-    console.log(req.body);
-    User.find(req.body,function(err,results){
-      console.log("inside user find");
-      if (err){ console.log("User not found in DB"); }
-      else{
+module.exports.login = function (req, res){
+
+
+    User.find(req.body, function (err, results){
+        if (err){
+            console.log("Error Out");
+        }
         
-        console.log("else part");
-        if( results &&  results.length === 1 ){
-          console.log("post controller for login");
-          res.json(req.body.email);
+        if (results && results.length === 1){
+            var userData= results[0];
+            res.json({email: req.body.email,
+                      _id: userData._id
+                      
+            });
         }
         else{
-          console.log("galt hau");
+          console.log("Wrong format saved in loaclStrogge");
+          res.json(req.body);
         }
-        
-      }
-
-    })
+    });
 }

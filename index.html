@@ -8,15 +8,21 @@
 </head>
 
 
-<div class="navbar navbar-default navbar-fixed-top" ng-controller="NavigationController">
+<nav class="navbar navbar-default navbar-fixed-top" ng-controller="NavigationController">
 	<div class="container">
-		<div><input type="text" ng-model="login.email"><input type="password" ng-model="login.password">
-			<button ng-click="logInUser()">Login</button> <a ui-sref="signUp">SignUp</a></div>
+		<div ng-show="!loggedIn"><input type="text" ng-model="login.email"><input type="password" ng-model="login.password">
+			<button ng-click="logInUser()">Login</button> <a ui-sref="signUp">SignUp</a>
+		</div>
+
+		<div ng-show="loggedIn">
+			<a ui-sref="editProfile">Edit Profile</a>
+			</div>
+		</div>
 	</div>
-</div>
+</nav>
+
 <body>
 <ui-view><ui-view>
-
 </body>
 
 
@@ -34,5 +40,14 @@
 <!-- Controller for our Angular App -->
 <script src="app/signup/signup-controller.js"></script>
 
+<script src="app/profile/edit-profile-controller.js"></script>
+
  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+
+<!-- Libraries -->
+    <script src="node_modules/ng-file-upload/dist/ng-file-upload.js"></script>
+    <script src="node_modules/ng-file-upload/dist/ng-file-upload-all.js"></script>
+	<script src="node_modules/ng-file-upload/dist/ng-file-upload-shim.js"></script>
+
+ 
 </html>
